@@ -1,88 +1,141 @@
-function Impar(){
+function multiplos3(){
     let msg = "";
 
-    for(let i = 1; i <= 100; i ++){
-        if(i % 2 !== 0){
-    
-            msg +=  i + ", ";
-        }
-     }
+for(let i = 1; i <= 100; i ++){
+    if(i % 3 == 0){
 
-    alert(msg);
+        msg +=  i + ", ";
+    }
+ }
+
+alert(msg);
+
 }
-function soma(){
+function quadrado(){
     
     var n1 = parseFloat (prompt("Digite um numero"))
-    var n2 = parseFloat (prompt("Digite outro numero"))
-    
-    var a = 0;
-    
-    a = n1 + n2
-    
-  alert(a);
+    q = n1*n1
+    alert(q)
 }
 
-function verifique(){
+function numcaracteres(){
 
-    let msg = ""
-    let num = parseInt(prompt("digite um numero"))
+    var strg = (prompt("Digite uma palavra"))
 
-    if(num%2!=0){
-        msg="Este numero é impar"
-    } else {
-        msg="este numero e par"
-    } 
+    alert(strg.length) /*.length é usado para retornar  
+                          o numero de caracteres*/      
+
+}
+
+function maiorValor(){
+
+    var n1 = parseFloat(prompt("Digite o primeiro numero"))
+    var n2 = parseFloat(prompt("Digite o segundo numero"))
+
+    if(n1 > n2){
+        msg = n1 + " é maior que " + n2;
+    }else if(n1 < n2){
+        msg = n1 + " é menor que " + n2;
+    }else{
+        msg = n1 + " é igual a " + n2;
+    }
     alert(msg)
 }
+function verificanumero(){
 
-function fatorial(){
+    var n1 = parseFloat(prompt("digite um numero"))
 
-    let msg = ""
-    let num = parseInt(prompt("digite um numero"))
-    let resultado = 1
-
-    for( i = 1; i <= num; i++){
-        resultado *= i
+    if(n1  < 0){
+        msg = n1 + " É menor que 0"
+    }else if(n1 > 0){
+        msg = n1 + " É maior que 0"
+    }else{
+        msg = n1 +" É igual a 0"
     }
-    msg+=("" + resultado)
-
-    alert(msg)
+        alert(msg)
 }
 
-function inverte(){
+function numaleatorio(){
+    var n1 =  parseFloat( prompt("Digite a quantidade de numeros a serem gerados"))
+    let numeros = [];
 
-var string =  (prompt("Digite uma palavra"))
-
-alert(string.split('').reverse().join('')) //split - separa as palavra em letras
-                                           //reverse - inverte a ordem das letras
-                                           //join - junta as letras novamente em uma string(palavra) 
-}
-function fibonacci(){
-
-    let a = 0
-    let b = 1
-    let num = parseInt(prompt("digite um numero"))
-
-    for(let i  = 0; i < num; i++){
-        let temp = a; //temp = vetores
-        a = b;
-        b = temp + b; //temp parametro usado para guardar um valor na memoria 
-        
+    for(let num = 0; num < n1; num++){
+       let numgerado = Math.floor(Math.random() * 100) + 1; /*Math.random() gera um número entre 0 e 1
+                                              Math.random() * 100 transforma isso em um número entre 0 e 99.9999  
+                                               Math.floor(...) arredonda para baixo, resultando em um número entre 0 e 99
+                                                +1 ajusta para o intervalo desejado 1 a 100 */
+         
+                                                numeros.push(numgerado)
+    
+    
     }
-    alert(a)
+
+    alert(numeros)
 }
-function pafrapa(){
-    var string =  (prompt("Digite uma palavra"))
-    var gnirts = ""
-    gnirts = string.split('').reverse().join('')
+function consoantes (){
+    let string = prompt("Digite uma frase ou palavra")
+    let vogais = "aeiouAEIOU"
+    let count = 0
+    
+    for(let i = 0; i < string.length; i++){
+        if(vogais.includes(string[i])){
+            count++
+        }
+        }
+        conc = string.length - count
 
+    
+    alert("Número de consoantes : " + conc)
+}
+function divisores(){
 
-    if (gnirts == string){
-       alert(true)    
+    var n1 = parseInt( prompt("Digite o numero para ver seus divisores"))
+    div = []
+
+    for(let i = 1; i <= n1; i++){
+        if(n1 % i == 0){
+            div.push(i)
+        }
     }
-        else{
-            alert(false)
+    alert(div)
+}
+function media(){
+
+    let num = parseInt(prompt("Digite a quantidade de numeros a serem escritos:"))
+    let numeros = []
+    let total = 0
+
+    for(let i = 0; i < num; i++){
+        let temp = parseInt(prompt(`Digite o numero na posição ${i+1}`))
+        numeros.push(temp)
+    }
+
+    for(let i = 0; i < num; i++){
+        total = total + numeros[i]  
+    }
+    total = total/num
+
+alert(total)
+}
+
+function palavralonga(){
+    var n1 = prompt("Digite uma frase:");
+
+    function palavraMaisLonga(frase) {
+        let palavras = frase.split(" "); //.split transforma tudo numa array
+        let palavraMaisLonga = ""; // ultilizar como vetor para armazenar a maior
+    
+        for (let i = 0; i < palavras.length; i++) { // Percorre todas as palavras
+            let palavraAtual = palavras[i]; // Pega a palavra atual
+            if (palavraAtual.length > palavraMaisLonga.length) { 
+                palavraMaisLonga = palavraAtual; // Atualiza a palavra mais longa
+            }
         }
     
-
+        return palavraMaisLonga; // Retorna a palavra mais longa encontrada
+    }
+    
+  
+    alert("A palavra mais longa é: " + palavraMaisLonga(n1));
+    
 }
