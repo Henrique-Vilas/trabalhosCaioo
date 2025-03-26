@@ -117,25 +117,3 @@ function media(){
 
 alert(total)
 }
-
-function palavralonga(){
-    var n1 = prompt("Digite uma frase:");
-
-    function palavraMaisLonga(frase) {
-        let palavras = frase.split(" "); //.split transforma tudo numa array
-        let palavraMaisLonga = ""; // ultilizar como vetor para armazenar a maior
-    
-        for (let i = 0; i < palavras.length; i++) { // Percorre todas as palavras
-            let palavraAtual = palavras[i]; // Pega a palavra atual
-            if (palavraAtual.length > palavraMaisLonga.length) { 
-                palavraMaisLonga = palavraAtual; // Atualiza a palavra mais longa
-            }
-        }
-    
-        return palavraMaisLonga; // Retorna a palavra mais longa encontrada
-    }
-    
-  
-    alert("A palavra mais longa é: " + palavraMaisLonga(n1));
-    
-}
